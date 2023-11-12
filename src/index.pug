@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="theme-color" content="#444444")
+    meta(name="description" content="Gallery page")
+    link(rel="shortcut icon" type="image/png" href="files/favicon.png" sizes="180x180")
+    title We'll Meet Again
+    //- fonts
+    link(rel="preload" href="fonts/Righteous-Regular.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="fonts/Roboto-BoldItalic.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="fonts/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="fonts/Roboto-MediumItalic.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin)
+    //- styles
+    link(rel="stylesheet", href="css/style.min.css")
+    //- scripts
+    script(deffer src="js/script.min.js")
+
+    //- noscript //- if script is not support
+    //-   style .simplebar-content-wrapper {overflow: auto;}
+  body
+    div.wrapper
+      canvas#heart
+      include html/header
+      main.page
+        section.section.hero
+          .container
+            h1.title Ожидание радости тоже есть радость.)
+            ul.timer.list-reset
+              li.timer__item
+                .timer__date.days 00
+                h2.timer__text дней
+              li.timer__item
+                .timer__date.hours 00
+                h2.timer__text часов
+              li.timer__item
+                .timer__date.minutes 00
+                h2.timer__text минут
+              li.timer__item
+                .timer__date.seconds 00
+                h2.timer__text секунд
+
+
+      include html/footer
+
+

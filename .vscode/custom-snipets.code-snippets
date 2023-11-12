@@ -1,0 +1,702 @@
+{
+  "picture": {
+    "scope": "html",
+    "prefix": "-picture",
+    "body": [
+      "<picture class=\"$2\">",
+      "\t<source srcset=\"@img/$1.webp 1x, @img/$1@2x.webp 2x\" type=\"image/webp\">",
+      "\t<img loading=\"lazy\" class=\".lazy$2\" src=\"@img/$1.png\" srcset=\"@img/$1.png 1x, @img/$1@2x.png 2x\" width=\"$4\" height=\"$5\" alt=\"image\">",
+      "</picture>"
+    ],
+  },
+  "unordered list": {
+    "scope": "html",
+    "prefix": "-ul",
+    "body": [
+      "<ul class=\"$1__list\">",
+      "\t<li class=\"$1__item\">",
+      "",
+      "\t</li>",
+      "",
+      "\t<li class=\"$1__item\">",
+      "",
+      "\t</li>",
+      "",
+      "\t<li class=\"$1__item\">",
+      "",
+      "\t</li>",
+      "</ul>"
+    ],
+  },
+  "ordered list": {
+    "scope": "html",
+    "prefix": "-ol",
+    "body": [
+      "<ol class=\"$1__list\">",
+      "\t<li class=\"$1__item\">",
+      "",
+      "\t</li>",
+      "",
+      "\t<li class=\"$1__item\">",
+      "",
+      "\t</li>",
+      "",
+      "\t<li class=\"$1__item\">",
+      "",
+      "\t</li>",
+      "</ol>"
+    ],
+  },
+  "navigation": {
+    "scope": "html",
+    "prefix": "-nav",
+    "body": [
+      "<nav class=\"nav\" data-nav>",
+      "\t<ul class=\"nav__list\">",
+      "\t\t<li class=\"nav__item\">",
+      "\t\t\t<a class=\"nav__link\" href=\"#$4\">",
+      "$1",
+      "\t\t\t</a>",
+      "\t\t</li>",
+      "\t\t<li class=\"nav__item\">",
+      "\t\t\t<a class=\"nav__link\" href=\"#$5\">",
+      "$2",
+      "\t\t\t</a>",
+      "\t\t</li>",
+      "\t\t<li class=\"nav__item\">",
+      "\t\t\t<a class=\"nav__link\" href=\"#$6\">",
+      "$3",
+      "\t\t\t</a>",
+      "\t\t</li>",
+      "\t</ul>",
+      "</nav>"
+    ],
+  },
+  "swiper": {
+    "scope": "html",
+    "prefix": "-swiper",
+    "body": [
+    "<div class=\"swiper\">",
+    "\t<!-- Additional required wrapper -->",
+    "\t<div class=\"swiper-wrapper\">",
+    "\t\t<div class=\"swiper-slide\">Slide 1</div>",
+    "\t\t<div class=\"swiper-slide\">Slide 2</div>",
+    "\t\t<div class=\"swiper-slide\">Slide 3</div>",
+    "\t</div>",
+    "\t<div class=\"swiper-pagination\"></div>",
+    "",
+    "\t<div class=\"swiper-button-prev\"></div>",
+    "\t<div class=\"swiper-button-next\"></div>",
+    "",
+    "\t<div class=\"swiper-scrollbar\"></div>",
+    "</div>"
+    ],
+  },
+  "svguse": {
+    "scope": "html",
+    "prefix": "-use",
+    "body": [
+      "<svg class=\"\" aria-hidden=\"true\">",
+      "\t<use xlink:href=\"img/sprite.svg#$2\"></use>",
+      "</svg>"
+    ],
+  },
+  "burger": {
+    "scope": "html",
+    "prefix": "-burger",
+    "body": [
+      "<button class=\"burger\" aria-label=\"Открыть меню\" aria-expanded=\"false\"  data-burger>",
+      "\t<span class=\"burger__line\"></span>",
+      "</button>"
+    ],
+  },
+  "checkbox": {
+    "scope": "html",
+    "prefix": "-checkbox",
+    "body": [
+      "<label class=\"custom-checkbox\">",
+      "\t<input type=\"checkbox\" class=\"custom-checkbox__field\">",
+      "\t<span class=\"custom-checkbox__content\">$1</span>",
+      "</label>"
+    ],
+  },
+  "social": {
+    "scope": "html",
+    "prefix": "-social",
+    "body": [
+      "<ul class=\"social\" title=\"социальные сети$1\">",
+      "\t<li class=\"social__item\"><a href=\"#\" target=\"_blank\" class=\"social__link social__link--fb\" aria-label=\"Наша страничка в Фейсбуке\"></a></li>",
+      "\t<li class=\"social__item\"><a href=\"#\" target=\"_blank\" class=\"social__link social__link--vk\" aria-label=\"Наша страничка во Вконтакте\"></a></li>",
+      "\t<li class=\"social__item\"><a href=\"#\" target=\"_blank\" class=\"social__link social__link--tw\" aria-label=\"Наша страничка в Твиттере\"></a></li>",
+      "</ul>"
+    ],
+  },
+  "basicform": {
+    "scope": "html",
+    "prefix": "-form",
+    "body": [
+      "<form action=\"#\" class=\"form\">",
+      "\t<label class=\"form__label\">",
+      "\t\t<input type=\"text\" name=\"Имя\" class=\"input-reset form__input\" placeholder=\"Имя\">",
+      "\t</label>",
+      "\t<button class=\"btn-reset form__btn\">Отправить</button>",
+      "</form>"
+    ],
+  },
+  "modal button": {
+    "scope": "html",
+    "prefix": "-modal-btn",
+    "body": [
+      "<!-- Connect the modal structure, use command -modal-structure -->",
+      "<button class=\"btn-reset modal-btn $1\" data-path=\"first$2\" data-animation=\"zoom-out$3\" data-speed=\"300$4\">$5</button>"
+    ],
+  },
+  "modal structure": {
+    "scope": "html",
+    "prefix": "-modal-structure",
+    "body": [
+      "<!-- Connect (Css and Js modal libraries) and -modal-btn -->",
+      "<div class=\"modal\">",
+      "\t<div class=\"modal__container\" role=\"dialog\" aria-modal=\"true\" data-target=\"first$1\">",
+      "\t\t<button class=\"btn-reset modal__close\" aria-label=\"Закрыть модальное окно\"></button>",
+      "\t\t<div class=\"modal__content\">$2</div>",
+      "\t</div>",
+      "</div>"
+    ],
+  },
+  "tooltip": {
+    "scope": "html",
+    "prefix": "-tooltip",
+    "body": [
+      "<span class=\"tooltip\">",
+      "\t<button class=\"tooltip__btn\" aria-describedby=\"$1\">$2</button>",
+      "\t<span class=\"tooltip__txt\" role=\"tooltip\" id=\"$1\">",
+      "\t\t<span class=\"visually-hidden\">Тултип: </span>",
+      "\t\t$3",
+      "\t</span>",
+      "</span>"
+    ],
+  },
+  "tabs sctructure": {
+    "scope": "html",
+    "prefix": "-tabs",
+    "body": [
+      "<div class=\"tabs\" data-tabs=\"$1\">",
+      "\t<ul class=\"tabs__list\">",
+      "\t\t<li class=\"tabs__item\"><button class=\"tabs__btn\" type=\"button\">$2</button></li>",
+      "\t\t<li class=\"tabs__item\"><button class=\"tabs__btn\" type=\"button\">$3</button></li>",
+      "\t\t<li class=\"tabs__item\"><button class=\"tabs__btn\" type=\"button\">$4</button></li>",
+      "\t</ul>",
+      "\t<div class=\"tabs__content\">",
+      "\t\t<div class=\"tabs__panel\">$5</div>",
+      "\t\t<div class=\"tabs__panel\">$6</div>",
+      "\t\t<div class=\"tabs__panel\">$7</div>",
+      "\t</div>",
+      "</div>"
+    ],
+  },
+  "accordion": {
+    "scope": "html",
+    "prefix": "-accordion",
+    "body": [
+      "<div class=\"accordion\" data-accordion=\"accordion\">",
+      "\t<ul class=\"accordion__controls\">",
+      "\t\t<li class=\"accordion__item\">",
+      "\t\t\t<button class=\"accordion__btn\" aria-expanded=\"false\">",
+      "\t\t\t\t<span class=\"accordion__title\">Accordion Title</span>",
+      "\t\t\t\t<span class=\"accordion__icon\"></span>",
+      "\t\t\t</button>",
+      "\t\t\t<div class=\"accordion__content\" aria-hidden=\"true\">",
+      "$1",
+      "\t\t\t</div>",
+      "\t\t</li>",
+      "\t\t<li class=\"accordion__item\">",
+      "\t\t\t<button class=\"accordion__btn\" aria-expanded=\"false\">",
+      "\t\t\t\t<span class=\"accordion__title\">Accordion Title</span>",
+      "\t\t\t\t<span class=\"accordion__icon\"></span>",
+      "\t\t\t</button>",
+      "\t\t\t<div class=\"accordion__content\" aria-hidden=\"true\">",
+      "$2",
+      "\t\t\t</div>",
+      "\t\t</li>",
+      "\t</ul>",
+      "</div>"
+    ],
+  },
+
+
+  "Pug picture": {
+    "scope": "jade",
+    "prefix": "-picture",
+    "body": [
+      "picture$2",
+      "\tsource(srcset=\"@img/$1.webp 1x, @img/$1@2x.webp 2x\" type=\"image/webp\")",
+      "\timg$2( src=\"@img/$1.png\" srcset=\"@img/$1.png 1x, @img/$1@2x.png 2x\" alt=\"image\")"
+    ],
+  },
+  "Pug navigation": {
+    "scope": "jade",
+    "prefix": "-nav",
+    "body": [
+      "nav.nav(data-nav)",
+      "\tul.nav__list",
+      "\t\tli.nav__item",
+      "\t\t\ta.nav__link(href=\"#\") $1",
+      "\t\tli.nav__item",
+      "\t\t\ta.nav__link(href=\"#\") $2",
+      "\t\tli.nav__item",
+      "\t\t\ta.nav__link(href=\"#\") $3"
+    ],
+  },
+  "Pug unordered list": {
+    "scope": "jade",
+    "prefix": "-ul",
+    "body": [
+      "ul$1__list",
+      "\tli$1__item",
+      "\tli$1__item",
+      "\tli$1__item"
+    ],
+  },
+  "Pug ordered list": {
+    "scope": "jade",
+    "prefix": "-ol",
+    "body": [
+      "ol$1__list",
+      "\tli$1__item",
+      "\tli$1__item",
+      "\tli$1__item"
+    ],
+  },
+  "Pug swiper": {
+    "scope": "jade",
+    "prefix": "-swiper",
+    "body": [
+    ".swiper",
+    "\t.swiper-wrapper",
+    "\t\t.swiper-slide Slide 1",
+    "\t\t.swiper-slide Slide 2",
+    "\t\t.swiper-slide Slide 3",
+    "\t.swiper-pagination",
+    "\t.swiper-button-prev",
+    "\t.swiper-button-next",
+    "\t.swiper-scrollbar"
+    ],
+  },
+  "Pug svguse": {
+    "scope": "jade",
+    "prefix": "-use",
+    "body": [
+      "svg(aria-hidden=\"true\")",
+      "\tuse(xlink:href=\"img/sprite.svg#$2\")"
+    ],
+  },
+  "Pug burger": {
+    "scope": "jade",
+    "prefix": "-burger",
+    "body": [
+      "button.burger(aria-label=\"Открыть меню\" aria-expanded=\"false\"  data-burger)",
+      "\tspan.burger__line"
+    ],
+  },
+  "Pug checkbox": {
+    "scope": "jade",
+    "prefix": "-checkbox",
+    "body": [
+      "label.custom-checkbox",
+      "\tinput.custom-checkbox__field(type=\"checkbox\")",
+      "\tspan.custom-checkbox__content $1"
+    ],
+  },
+  "Pug social": {
+    "scope": "jade",
+    "prefix": "-social",
+    "body": [
+      "ul.social(title=\"соцсети$1\")",
+      "\tli.social__item",
+      "\t\ta.social__link.social__link--fb(href=\"#\" target=\"_blank\" aria-label=\"Наша страничка в Фейсбуке\")",
+      "\tli.social__item",
+      "\t\ta.social__link.social__link--vk(href=\"#\" target=\"_blank\" aria-label=\"Наша страничка во Вконтакте\")",
+      "\tli.social__item",
+      "\t\ta.social__link.social__link--tw(href=\"#\" target=\"_blank\" aria-label=\"Наша страничка в Твиттере\")"
+    ],
+  },
+  "Pug basicform": {
+    "scope": "jade",
+    "prefix": "-form",
+    "body": [
+      "form.form#form(action=\"https://jsonplaceholder.typicode.com/posts\" method=\"POST\" enctype=\"multipart/form-data\")",
+      "\tlabel.form__label",
+      "\t\tinput.input-reset.form__input(type=\"text\" name=\"Имя\" placeholder=\"Имя\")",
+      "\tbutton.btn-reset.form__btn(type=\"submit\") Отправить"
+    ],
+  },
+  "Pug modal button": {
+    "scope": "jade",
+    "prefix": "-modal-btn",
+    "body": [
+      "//- Connect the modal structure, use command -modal-structure",
+      "button.btn-reset.modal-btn(data-path=\"first$2\" data-animation=\"zoom-out$3\" data-speed=\"300$4\") $3"
+    ],
+  },
+  "Pug modal structure": {
+    "scope": "jade",
+    "prefix": "-modal-structure",
+    "body": [
+      "//- Connect (Css and Js modal libraries) and -modal-btn",
+      ".modal",
+      "\t.modal__container(role=\"dialog\" aria-modal=\"true\" data-target=\"first$1\")",
+      "\t\tbutton.btn-reset.modal__close(aria-label=\"Закрыть модальное окно\")",
+      "\t\t.modal__content",
+      "\t\t\t$2"
+    ],
+  },
+  "Pug tooltip": {
+    "scope": "jade",
+    "prefix": "-tooltip",
+    "body": [
+      "span.tooltip",
+      "\tbutton.tooltip__btn(aria-describedby=\"$1\") $2",
+      "\tspan.tooltip__txt(role=\"tooltip\" id=\"$1\")",
+      "\t\tspan.visually-hidden Тултип:",
+      "\t\t\t$3"
+    ],
+  },
+  "Pug tabs sctructure": {
+    "scope": "jade",
+    "prefix": "-tabs",
+    "body": [
+      ".tabs(data-tabs=\"$1\")",
+      "\tul.tabs__list",
+      "\t\tli.tabs__item",
+      "\t\t\tbutton.tabs__btn(type=\"button\") $2",
+      "\t\tli.tabs__item",
+      "\t\t\tbutton.tabs__btn(type=\"button\") $3",
+      "\t\tli.tabs__item",
+      "\t\t\tbutton.tabs__btn(type=\"button\") $4",
+      "\t.tabs__content",
+      "\t\t.tabs__panel",
+      "\t\t\t$5",
+      "\t\t.tabs__panel",
+      "\t\t\t$6",
+      "\t\t.tabs__panel",
+      "\t\t\t$7"
+    ],
+  },
+  "Pug accordion": {
+    "scope": "jade",
+    "prefix": "-accordion",
+    "body": [
+      ".accordion(data-accordion=\"accordion\")",
+      "\tul.accordion__controls",
+      "\t\tli.accordion__item",
+      "\t\t\tbutton.accordion__btn(aria-expanded=\"false\")",
+      "\t\t\t\tspan.accordion__title Accordion Title",
+      "\t\t\t\tspan.accordion__icon",
+      "\t\t\t.accordion__content(aria-hidden=\"true\") $1",
+      "\t\tli.accordion__item",
+      "\t\t\tbutton.accordion__btn(aria-expanded=\"false\")",
+      "\t\t\t\tspan.accordion__title Accordion Title",
+      "\t\t\t\tspan.accordion__icon",
+      "\t\t\t.accordion__content(aria-hidden=\"true\") $2"
+    ],
+  },
+
+
+  "picture style": {
+    "scope": "scss,css",
+    "prefix": "-picture",
+    "body": [
+      "picture,img {",
+      "\tdisplay:block;",
+      "}",
+    ],
+  },
+  "navigation style": {
+    "scope": "scss",
+    "prefix": "-nav",
+    "body": [
+      ".nav {",
+      "\t$1",
+      "}",
+      ".nav__list {",
+      "\tdisplay:flex;",
+      "\tjustify-content:space-between;",
+      "\talign-items:center;",
+      "\t$2",
+      "}",
+      ".nav__item {",
+      "\t$3",
+      "}",
+      ".nav__link {",
+      "\t$4",
+      "}"
+    ],
+  },
+  "navigation scss style": {
+    "scope": "scss",
+    "prefix": "-nav",
+    "body": [
+      ".nav {",
+      "\t$1",
+      "\t&__list {",
+      "\t\tdisplay:flex;",
+      "\t\tjustify-content:space-between;",
+      "\t\talign-items:center;",
+      "\t\t$2",
+      "\t}",
+      "\t&__item {",
+      "\t\t$3",
+      "\t}",
+      "\t&__link {",
+      "\t\t$4",
+      "\t}",
+      "}"
+    ],
+  },
+  "swiper style": {
+    "scope": "css",
+    "prefix": "-swiper",
+    "body": [
+      ".swiper {",
+      "\t$1",
+      "}",
+      ".swiper-wrapper {",
+      "\t$2",
+      "}",
+      ".swiper-slide {",
+      "\t$3",
+      "}",
+      ".swiper-pagination {",
+      "\t$4",
+      "}",
+      ".swiper-button-prev {",
+      "\t$5",
+      "}",
+      ".swiper-button-next {",
+      "\t$6",
+      "}",
+      ".swiper-scrollbar {",
+      "\t$7",
+      "}"
+    ],
+  },
+  "swiper scss style": {
+    "scope": "scss",
+    "prefix": "-swiper",
+    "body": [
+      ".swiper {",
+      "\t$1",
+      "\t&-wrapper {",
+      "\t\t$2",
+      "\t}",
+      "\t&-slide {",
+      "\t\t$3",
+      "\t}",
+      "\t&-pagination {",
+      "\t\t$4",
+      "\t}",
+      "\t&-button-prev {",
+      "\t\t$5",
+      "\t}",
+      "\t&-button-next {",
+      "\t\t$6",
+      "\t}",
+      "\t&-scrollbar {",
+      "\t\t$7",
+      "\t}",
+      "}"
+    ],
+  },
+
+
+
+  "Js Modal": {
+    "scope": "javascript",
+    "prefix": "-modal",
+    "body": [
+      "new Modal({",
+      "\tisOpen: (modal) => {}",
+      "\tisClose: () => {}",
+      "});"
+    ],
+  },
+  "Js lazy": {
+    "scope": "javascript",
+    "prefix": "-lazy",
+    "body": [
+      "new LazyLoad({",
+      "\telements_selector: '.lazy' ,",
+      "});"
+    ],
+  },
+  "Js swiper": {
+    "scope": "javascript",
+    "prefix": "-swiper",
+    "body": [
+    "new Swiper('.swiper$1', {",
+    "\t// Optional parameters",
+    "\tdirection: 'horizontal',",
+    "\teffect: 'fade',",
+    "\tloop:true,",
+    "\tspeed:700,",
+    "\tallowTouchMove: true,",
+    "\tspaceBetween: 30,",
+    "\tslidesPerView: 1,",
+    "\tslidesPerGroup:1,",
+    "\tfadeEffect: {",
+    "\t\tcrossFade: true,",
+    "\t},",
+    "\tpagination: {",
+    "\t\tel: \".swiper-pagination\",",
+    "\t\tbullets: true,",
+    "\t},",
+    "\tnavigation: {",
+    "\t\tnextEl: \".swiper-button-next\",",
+    "\t\tprevEl: \".swiper-button-prev\",",
+    "\t},",
+    "});"
+    ],
+  },
+  "Js swiper import": {
+    "scope": "javascript",
+    "prefix": "-import swiper",
+    "body": [
+      "import Swiper, { Navigation, Pagination } from 'swiper';",
+      "Swiper.use([Navigation, Pagination]);",
+      "const swiper = new Swiper('.class', {",
+      "\tslidesPerView: 'auto',",
+      "});"
+    ],
+  },
+  "Js custom scroll import": {
+    "scope": "javascript",
+    "prefix": "-import custom-scroll",
+    "body": [
+      "import 'simplebar';"
+    ],
+  },
+  "Js scroll animation": {
+    "scope": "javascript",
+    "prefix": "-import scroll animation",
+    "body": [
+      "import AOS from 'aos';",
+      "AOS.init();"
+    ],
+  },
+  "Js paralax import": {
+    "scope": "javascript",
+    "prefix": "-import paralax",
+    "body": [
+      "import Rellax from 'rellax';",
+      "const rellax = new Rellax('.rellax');"
+    ],
+  },
+  "Js scrolling to sections import": {
+    "scope": "javascript",
+    "prefix": "-import scrolling fade",
+    "body": [
+      "import SmoothScroll from 'smooth-scroll';",
+      "const scroll = new SmoothScroll('a[href*=\"#\"]');"
+    ],
+  },
+  "Js setTimeout": {
+    "scope": "javascript",
+    "prefix": "-timeOut",
+    "body": [
+    "setTimeout(() => {}, 300);"
+    ],
+  },
+  "Js addClass": {
+    "scope": "javascript",
+    "prefix": "-addClass",
+    "body": [
+    "document.classList.add('class');"
+    ],
+  },
+  "Js removeClass": {
+    "scope": "javascript",
+    "prefix": "-removeClass",
+    "body": [
+    "document.classList.remove('class');"
+    ],
+  },
+  "Js querySelectorAll": {
+    "scope": "javascript",
+    "prefix": "-allSelectors",
+    "body": [
+    "document.querySelectorAll('.class');"
+    ],
+  },
+  "Js querySelector": {
+    "scope": "javascript",
+    "prefix": "-selector",
+    "body": [
+    "document.querySelector('.class');"
+    ],
+  },
+  "Js click": {
+    "scope": "javascript",
+    "prefix": "-click",
+    "body": [
+    "document.addEventListener('click', (el) => {",
+    "$1",
+    "});"
+    ],
+  },
+  "Js parents": {
+    "scope": "javascript",
+    "prefix": "-par",
+    "body": [
+    "`${}`"
+    ],
+  },
+  "Js style": {
+    "scope": "javascript",
+    "prefix": "-style",
+    "body": [
+    "document.body.style.top = '10'+'px';"
+    ],
+  },
+  "Js atributes": {
+    "scope": "javascript",
+    "prefix": "-atribute",
+    "body": [
+    "// document.body.removeAttribute('data-position');",
+    "// document.body.addAttribute('data-position');"
+    ],
+  },
+  "Js tabs": {
+    "scope": "javascript",
+    "prefix": "-tabs",
+    "body": [
+      "const tab = new Tabs('tab', {",
+      "\tisChanged: (tabs) => {",
+      "\t\tconsole.log(tabs.tabList);",
+      "\t}",
+      "});",
+      "tab.switchTabs(document.querySelector('#tab3'));"
+    ],
+  },
+  "Js accordion": {
+    "scope": "javascript",
+    "prefix": "-accordion",
+    "body": [
+      "const acc = new Accordion('accordion', {",
+      "\toneFixed:false,",
+      "\toneActive:false,",
+      "\tspeed:700,",
+      "\tclasses:{parentClass: \"accordion\"}",
+      "});"
+    ],
+  },
+  "Js scroll": {
+    "scope": "javascript",
+    "prefix": "-scroll",
+    "body": [
+      "// create paddingOffset for scrolls",
+      "const paddingOffset = window.innerWidth - document.body.offsetWidth;"
+    ],
+  },
+
+}

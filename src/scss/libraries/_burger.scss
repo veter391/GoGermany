@@ -1,0 +1,84 @@
+$burder-width:30px;
+$burder-height:25px;
+$burder-position:relative;
+$burder-line-height:2px;
+$burder-line-color:var(--light-theme);
+$nav-index:5;
+$nav-min-width:300px;
+$burder-mediaquery:1024px; // if you change this value, you must also change it in scripts window.matchMedia("(max-width: 1024px)")
+
+.burger {
+  overflow: hidden;
+	position: $burder-position;
+	height: $burder-height;
+	width: $burder-width;
+	display: none;
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: $burder-line-height;
+    background-color: $burder-line-color;
+    transform: translateY(-50%);
+    transform: scaleX(1);
+    transition: transform .3s ease;
+  }
+  &::after,&::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: $burder-line-height;
+    left: 0;
+    background-color: $burder-line-color;
+    transition-property: transform, top, bottom;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+  }
+  &::before{ top: 0; }
+  &::after{ bottom: 0; }
+}
+
+.burger.burger--active {
+  .burger__line {
+    transform: scaleX(0);
+  }
+  &::before,&::after{
+    animation: burger-open .3s ease 1 forwards;
+    transition-delay: .3s;
+  }
+  &::before{ transform: rotate(45deg); }
+  &::after{ transform: rotate(-45deg); }
+}
+
+.nav.nav--visible { transform: none !important; }
+@keyframes burger-open { 100%{ top: 50%; bottom: auto;} }
+
+@media (max-width: $burder-mediaquery) {
+	.burger { display: block; }
+	.nav {
+    display: block;
+    transform: translateX(100%);
+    right: 0;
+		position: fixed;
+		z-index: $nav-index;
+		min-width:$nav-min-width;
+		overflow-y: auto;
+	}
+  .nav__list {
+    background-color: var(--dark-theme);
+    flex-direction: column;
+  }
+  .nav__item:not(:last-child) {
+    margin: 0;
+  }
+  .nav__item {
+    width: 100%;
+    text-align: center;
+    padding: 13px;
+  }
+}

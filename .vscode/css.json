@@ -1,0 +1,12 @@
+{
+	"Create picture style": {
+		"prefix": "-picture",
+		"body": [
+		  "picture {",
+		  "\twidth:100%;",
+		  "\tborder:2px solid red;",
+		  "}"
+		],
+		"description": "picture structure"
+	  }
+}

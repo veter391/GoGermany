@@ -1,0 +1,302 @@
+@import 'imports';
+/* ::: Instrucrions :::
+
+- use adaptive mixin-
+  @include adaptive("padding", 50 ,20, 0);
+
+-use convert px in (rem em %)-
+  p {
+	  font-size:rem(20px);
+	  padding:em(15px);}
+
+::: Instructions ::: */
+
+// ::: Inckude Mixins :::
+@include keyframes;
+// ::: Variables :::
+//-Required Variables!!
+$maxWidth: 1920; // not px
+$maxWidthContainer: 1520; // not px
+$body-font: 'Roboto';
+//-Primary Variables
+$red:#DC143C;
+$red-dark:#A80F0F;
+$orange:#DC8C14; // for focus state
+$white: #fff;
+
+html {
+  -webkit-box-sizing: border-box;
+	box-sizing: border-box;   /* so that padding doesn't affect the look */
+  height: 100%;
+  overflow: overlay;  // if browser support overly
+  min-width: 320px;
+}
+*,*::before,*::after {-webkit-box-sizing: inherit;box-sizing: inherit;}
+body {
+	margin: 0;
+	height: 100%;
+	min-width: 320px;
+	font-family: $body-font,Arial, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+	line-height: 1;  /* space between lines in text. */
+	color: white; /* text color primari for texts */
+  background-image: linear-gradient(to left bottom, #dc143c, #e30055, #e40070, #e0008d, #d400aa, #c800b8, #b803c7, #a317d6, #9716d9, #8916db, #7a18de, #681ae1);
+  color: $white;
+  overflow: overlay;  // if browser support overlay
+}
+button,input {font: inherit;outline: none;}
+button {cursor: pointer;}
+img {display: block;max-width: 100%;height: auto;object-fit: cover;}
+a {text-decoration: none;color: inherit;outline: none;}
+h1,h2,h3,h4,h5,h6,p {margin: 0;transition: color .3s ease;}
+/* #preloader_preload {
+	display: block;
+	position: fixed;
+	z-index: 300;
+	top: 0;left: 0;
+	width: 100%;
+	height: 100%;
+	background: #9B59B6 url(img/rings.svg) center center no-repeat;
+	background-size:124px;
+} */
+
+.visually-hidden {position: absolute;overflow: hidden;clip: rect(0px 0px 0px 0px);clip: rect(0, 0, 0, 0);width: 1px;height: 1px;margin: -1px;padding: 0;border: 0;}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1920px;
+  min-height: 100%;
+  margin: 0 auto;
+	overflow: hidden; /* if you use position: sticky on the site - remove this setting */
+  // overflow: ;
+}
+.container {
+  margin: 0 auto;
+	max-width: $maxWidthContainer + 100 + px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.btn-reset {padding: 0;border: none;background: transparent;cursor: pointer;}
+.list-reset {list-style: none;margin: 0;padding: 0;}
+.input-reset {
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	border-radius: 0;
+	background-color: #fff;
+
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		display: none;
+	}
+}
+.is-hidden {display: none !important; /* stylelint-disable-line declaration-no-important */}
+.js-focus-visible:focus:not(.focus-visible) {outline: none;}
+// if scroll is disable add this class to body
+.not-scroll {
+	position: fixed;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	width: 100%;
+  overscroll-behavior: none;
+}
+// ::: My Scss :::
+
+.page {
+  flex: 1 1 auto;
+}
+
+// ::: My Scss :::
+.logo {
+  height: 150px;
+}
+.header {
+  padding-top: 30px;
+  margin-bottom: 30px;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+  }
+}
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  // cursor: pointer;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 90px;
+    min-height: 100px;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: rgba(0,0,0, 0.15);
+    box-shadow: rgba(255, 255, 255, 0.7) 4px 4px 20px;
+    color: #fff;
+  }
+  &__date {
+    margin-bottom: 5px;
+    font-size: em(56);
+    line-height: 60px;
+    font-weight: 700;
+  }
+  &__item:not(:last-child) {
+    margin-right: 35px;
+  }
+  &__text {
+    font-size: em(17);
+  }
+}
+.footer {
+  align-items: end;
+  text-align: center;
+}
+
+.footer__bottom-link {
+  transition: color .3s ease;
+  line-height: 50px;
+  .color-red {
+    transition: color .3s ease;
+    font-weight: 400;
+  }
+  &:hover, &:active {
+    color: #000;
+    .color-red {
+      color: white;
+    }
+  }
+}
+
+canvas {
+  position: absolute;
+  left:0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  background-color: transparent;
+  z-index: -1;
+}
+
+
+@media (max-width: 620px) {
+  .title {
+    font-size: em(22);
+  }
+  .timer__date {
+    font-size: 2em;
+    line-height: 42px;
+  }
+  .timer__text {
+    font-size: 0.9em;
+  }
+  .timer {
+    justify-content: space-between;
+  }
+  .timer__item:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .logo {
+    height: 90px;
+  }
+}
+
+@media (max-width: 430px) {
+  .title {
+    line-height: 30px;
+  }
+  .timer {
+    display: grid;
+    grid-template-columns: minmax(auto, 100px) minmax(auto, 100px);
+    justify-content: center;
+    grid-gap: 15px;
+    &__item:not(:last-child) {
+      margin: 0;
+    }
+  }
+}
+// ::: Sections :::
+
+
+
+// active classes
+.nav__link--active {
+  color: $red;
+}
+.filter__btn--active {
+  background-color: $red;
+}
+.color-red {
+  color: #000;
+}
+.light {
+  display: none;
+}
+.hero__hawk_start{
+  align-items: flex-start;
+}
+.modal__text{
+  text-align: left;
+}
+.modal__title{
+  margin-bottom: em(8);
+}
+.hero__box_padding{
+  // padding: 3.1em 8.25em;
+  @include adaptive("padding-top", 55 ,20, 0);
+  @include adaptive("padding-bottom", 55 ,20, 0);
+  @include adaptive("padding-right", 130 ,20, 0);
+  @include adaptive("padding-left", 130 ,20, 0);
+}
+.is-invalid {
+  border-color:#DF3600;
+}
+.is-fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-color: $white;
+  opacity: 1;
+  z-index: 5;
+}
+
+/*Убрать полосу прокрутки для всей страницы*/
+/*не работает в firefox!!!*/
+
+*::-webkit-scrollbar {
+  width: 7px;
+  background: transparent;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background:$red;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  background-color: transparent;
+}

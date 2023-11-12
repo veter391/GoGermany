@@ -1,0 +1,29 @@
+@use "sass:math";
+/*
+-How to convert px in (rem em %)-
+p {
+	font-size:rem(20px);
+	padding:em(15px);
+
+	margin:prc(250px , 1000px); // 25%
+	margin:prc(child(px), parent(px));
+}
+*/
+
+@function prc($childPx, $parentPX) {
+	$res: math.div($childPx, $parentPX) * 100%;
+	@return $res;
+}
+@function rem($px) {
+	$res: math.div($px, 16) + rem;
+	@return $res;
+}
+@function em($px) {
+	$res: math.div($px, 16) + em;
+	@return $res;
+}
+// easem convert to em, calculate the pixels / font-size and convert to em
+@function easem($px,$rem) {
+	$res: math.div($px, $rem) + em;
+	@return $res;
+}
